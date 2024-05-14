@@ -1,0 +1,26 @@
+{
+  "name": "contract-test-pact",
+  "version": "1.0.0",
+  "description": "contract testing for APIS",
+  "main": "index.js",
+  "scripts": {
+    "test:consumer": "jest consumer/**/**-consumer-contract.spec.js --testTimeout=20000",
+    "test:provider": "jest provider/**/**-provider-contract.spec.js --testTimeout=30000",
+    "publish:pact": "pact-broker publish ./pacts --consumer-app-version 1.0.1 --branch branch1 --broker-base-url=https://rain.pactflow.io --broker-token=Wb2dCzWDv5esSxKIOwUn",
+    "create_env:pact": "pact-broker create-environment --name=stag --display-name=stag --broker-base-url=https://rain.pactflow.io/ --broker-token=Wb2dCzWDv5esSxKIOwUn",
+    "set_env:pact": "pact-broker describe-environment --uuid=50427cb6-af88-4ccb-9749-1d1c8feeb4a3 --broker-base-url=https://rain.pactflow.io/ --broker-token=Wb2dCzWDv5esSxKIOwUn"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.18.6",
+    "@babel/preset-env": "^7.18.6",
+    "@pact-foundation/pact": "^10.0.1",
+    "axios": "0.26.0",
+    "babel-jest": "^28.1.2",
+    "crypto-js": "^4.1.1",
+    "dotenv": "^16.0.1",
+    "jest": "27.5.1",
+    "jest-pact": "^0.10.1"
+  }
+}

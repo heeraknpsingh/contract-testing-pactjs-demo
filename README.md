@@ -1,2 +1,11 @@
-# contract-testing-pactjs-demo
-This repository is for consumer based contract testing with PactJS
+# api-contract-testing
+
+## Run Consumer Tests:
+
+npm run test:consumer
+
+## Run Provider Tests:
+
+npm run test:provider
+
+**_To handle this error used file we used babel.config.js to handle error 'SyntaxError: Cannot use import statement outside a module'_**
